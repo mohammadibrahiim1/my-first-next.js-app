@@ -10,8 +10,11 @@ export default function Home() {
       </Head>
       <main>
         <h1>hello world</h1>
-        <Link href="/blog/blog1">blog</Link>
-        <Image src="/pexels-photo.jpg" width={420} height={420} />
+        <div className="btn-group">
+          <button className="btn btn-active">Button</button>
+          <button className="btn">Button</button>
+          <button className="btn">Button</button>
+        </div>
       </main>
     </>
   );
