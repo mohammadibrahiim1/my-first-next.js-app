@@ -42,7 +42,8 @@ const ProductCard = ({ product }) => {
           <Meta
             avatar={<Avatar src={thumbnail} />}
             title={title.slice(0, 23)}
-            description={price}
+            description={price} 
+            
           />
           <Meta
             className="pt-8"

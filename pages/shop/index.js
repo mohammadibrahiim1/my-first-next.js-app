@@ -4,8 +4,27 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, theme } from "antd";
+import { Checkbox, Layout, Menu, theme } from "antd";
+// import  { CheckboxValueType } from "antd/es/checkbox/Group";
+
+const plainOptions = ["Apple", "Pear", "Orange"];
 const { Header, Content, Footer, Sider } = Layout;
+
+const onChange = () => {
+  console.log("checked = ", checkedValues);
+};
+
+const options = [
+  { label: "Apple", value: "Apple" },
+  { label: "Pear", value: "Pear" },
+  { label: "Orange", value: "Orange" },
+];
+
+const optionsWithDisabled = [
+  { label: "Apple", value: "Apple" },
+  { label: "Pear", value: "Pear" },
+  { label: "Orange", value: "Orange", disabled: false },
+];
 
 export const getStaticProps = async () => {
   const res = await fetch("https://dummyjson.com/products");
@@ -27,17 +46,9 @@ const Shop = ({ products }) => {
     <div>
       <section
         className=" container mx-auto"
-        // style={{ padding: 0, "background": "colorBgContainer" }}
+       
       >
-        {/* <div className="flex">
-          <div>left side checkbox filter</div>
-          <h1>{products.products.length}</h1>
-          <div className="grid grid-cols-3 gap-5">
-            {products.products.map((product) => (
-              <Card product={product} key={product.id}></Card>
-            ))}
-          </div>
-        </div> */}
+       
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Layout>
           <Sider
@@ -58,47 +69,27 @@ const Shop = ({ products }) => {
               //   theme="dark"
               mode="inline"
               //   defaultSelectedKeys={["4"]}
-              items={
-                [
-                  {
-                    // key: "1",
-                    // icon: <UserOutlined />,
-                    label: "smartphones",
-                  },
-                  {
-                    // key: "2",
-                    // icon: <VideoCameraOutlined />,
-                    label: "home-decoration",
-                  },
-                  {
-                    // key: "3",
-                    // icon: <UploadOutlined />,
-                    label: "groceries",
-                  },
-                ].map((item) => ({
-                    // key: String(index + 1),
-                    // icon: React.createElement(icon),
-                  
-                }))
-                //  items={
-                //     [
-                // {
-                //     key: '1',
-                //     icon: <UserOutlined />,
-                //     label: 'nav 1',
-                //   },
-                //   {
-                //     key: '2',
-                //     icon: <VideoCameraOutlined />,
-                //     label: 'nav 2',
-                //   },
-                //   {
-                //     key: '3',
-                //     icon: <UploadOutlined />,
-                //     label: 'nav 3',
-                //   },
-                // ]
-              }
+            />
+
+            <Checkbox.Group
+              options={plainOptions}
+              defaultValue={["Apple"]}
+              onChange={onChange}
+            />
+            <br />
+            <br />
+            <Checkbox.Group
+              options={options}
+              defaultValue={["Pear"]}
+              onChange={onChange}
+            />
+            <br />
+            <br />
+            <Checkbox.Group
+              options={optionsWithDisabled}
+              disabled
+              defaultValue={["Apple"]}
+              onChange={onChange}
             />
           </Sider>
           <Layout>
