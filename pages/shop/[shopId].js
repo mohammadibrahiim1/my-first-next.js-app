@@ -179,12 +179,7 @@ const ProductDetails = ({ product }) => {
                         </a>
                       </li>
                     </ul>
-                    <a
-                      class="mb-4 text-xs me-5 hover:text-blue-600 dark:text-gray-400 dark:hover:text-gray-300 lg:mb-0"
-                      href="#"
-                    >
-                      {rating}
-                    </a>
+
                     <a
                       class="mb-4 text-xs underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-gray-300 lg:mb-0"
                       href="#"
@@ -201,7 +196,7 @@ const ProductDetails = ({ product }) => {
                 </div>
                 <div class="mb-6">
                   <h2 class="mb-2 text-lg font-bold text-gray-700 dark:text-gray-400">
-                    System Specs :
+                    Product Specs :
                   </h2>
                   <div class="bg-gray-100 dark:bg-gray-700 rounded-xl">
                     <div class="p-3 lg:p-5 ">
@@ -302,10 +297,10 @@ const ProductDetails = ({ product }) => {
                               </span>
                               <div>
                                 <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                  Frequency
+                                  Rating
                                 </p>
                                 <h2 class="text-base font-semibold text-gray-700 dark:text-gray-400">
-                                  3.5 GHz
+                                  {rating}
                                 </h2>
                               </div>
                             </div>
@@ -359,7 +354,7 @@ const ProductDetails = ({ product }) => {
                   </div>
                   <Link href="">
                     <Space wrap>
-                      <Button>Add To Card</Button>
+                      <Button>Add To Cart</Button>
                     </Space>
                   </Link>
                 </div>
