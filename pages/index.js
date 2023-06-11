@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Contact from "./contact";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
           <button className="btn btn-active">Button</button>
           <button className="btn">Button</button>
           <button className="btn">Button</button>
+        </div>
+        <div>
+          <Contact></Contact>
         </div>
       </main>
     </>
