@@ -21,11 +21,14 @@ const Shop = ({ products }) => {
   console.log(products);
 
   const {
-    token: { colorBgContainer },
+    token: { colorBgContainer,colorBgLayout },
   } = theme.useToken();
   return (
     <div>
-      <section className="">
+      <section
+        className=" container mx-auto"
+        // style={{ padding: 0, "background": "colorBgContainer" }}
+      >
         {/* <div className="flex">
           <div>left side checkbox filter</div>
           <h1>{products.products.length}</h1>
@@ -35,8 +38,10 @@ const Shop = ({ products }) => {
             ))}
           </div>
         </div> */}
+        <Header style={{ padding: 0, background: colorBgContainer }} />
         <Layout>
           <Sider
+            style={{ background: colorBgLayout }}
             width={240}
             breakpoint="lg"
             collapsedWidth="0"
@@ -49,7 +54,6 @@ const Shop = ({ products }) => {
           >
             <div className="demo-logo-vertical" />
             <Menu
-
             //   theme="dark"
             //   mode="inline"
             //   defaultSelectedKeys={["4"]}
@@ -66,22 +70,25 @@ const Shop = ({ products }) => {
             />
           </Sider>
           <Layout>
-            <Header style={{ padding: 0, background: colorBgContainer }} />
-            <Content width={926}
-            style={{ margin: "24px 16px 0" }}
+            <Content
+              width={926}
+              style={{  background: colorBgLayout }}
             >
               <div
-                style={{
-                  //   padding: 24,
-                  //   minHeight: 360,
-                  background: colorBgContainer,
-                }}
+                className="grid grid-cols-4 gap-5"
+                style={
+                  {
+                    //   padding: 24,
+                    //   minHeight: 360,
+                    //   background: colorBgContainer,
+                  }
+                }
               >
-                <div className="grid grid-cols-5 gap-5">
-                  {products.products.map((product) => (
-                    <Card product={product} key={product.id}></Card>
-                  ))}
-                </div>
+                {/* <div className="grid grid-cols-4 gap-5"> */}
+                {products.products.map((product) => (
+                  <Card product={product} key={product.id}></Card>
+                ))}
+                {/* </div> */}
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>
