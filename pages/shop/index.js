@@ -4,27 +4,27 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Checkbox, Layout, Menu, theme } from "antd";
+import { Checkbox, Col, Layout, Menu, Row, theme } from "antd";
 // import  { CheckboxValueType } from "antd/es/checkbox/Group";
 
 const plainOptions = ["Apple", "Pear", "Orange"];
 const { Header, Content, Footer, Sider } = Layout;
 
-const onChange = () => {
-  console.log("checked = ", checkedValues);
+const onChange = (checkboxValues) => {
+  console.log("checked =", checkboxValues);
 };
 
-const options = [
-  { label: "Apple", value: "Apple" },
-  { label: "Pear", value: "Pear" },
-  { label: "Orange", value: "Orange" },
-];
+// const options = [
+//   { label: "Apple", value: "Apple" },
+//   { label: "Pear", value: "Pear" },
+//   { label: "Orange", value: "Orange" },
+// ];
 
-const optionsWithDisabled = [
-  { label: "Apple", value: "Apple" },
-  { label: "Pear", value: "Pear" },
-  { label: "Orange", value: "Orange", disabled: false },
-];
+// const optionsWithDisabled = [
+//   { label: "Apple", value: "Apple" },
+//   { label: "Pear", value: "Pear" },
+//   { label: "Orange", value: "Orange", disabled: false },
+// ];
 
 export const getStaticProps = async () => {
   const res = await fetch("https://dummyjson.com/products");
@@ -44,11 +44,7 @@ const Shop = ({ products }) => {
   } = theme.useToken();
   return (
     <div>
-      <section
-        className=" container mx-auto"
-       
-      >
-       
+      <section className=" container mx-auto">
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Layout>
           <Sider
@@ -71,26 +67,51 @@ const Shop = ({ products }) => {
               //   defaultSelectedKeys={["4"]}
             />
 
-            <Checkbox.Group
-              options={plainOptions}
-              defaultValue={["Apple"]}
-              onChange={onChange}
-            />
-            <br />
-            <br />
-            <Checkbox.Group
-              options={options}
-              defaultValue={["Pear"]}
-              onChange={onChange}
-            />
-            <br />
-            <br />
-            <Checkbox.Group
-              options={optionsWithDisabled}
-              disabled
-              defaultValue={["Apple"]}
-              onChange={onChange}
-            />
+            <div className="p-5">
+              <hr />
+              <h4 className="text-dark font-semibold ">Brands</h4>
+              <Checkbox.Group
+                style={{
+                  width: "100%",
+                }}
+                onChange={onChange}
+              >
+                <Row>
+                  <Col span={8} className="py-2">
+                    <Checkbox value="A">Samsung</Checkbox>
+                    <Checkbox value="B">Apple</Checkbox>
+                    <Checkbox value="C">Oppo</Checkbox>
+                    <Checkbox value="D">Dell</Checkbox>
+                    <Checkbox value="E">Huawei</Checkbox>
+                    <Checkbox value="E">Microsoft</Checkbox>
+                    <Checkbox value="E">HP</Checkbox>
+                    <Checkbox value="E">Infinix</Checkbox>
+                  </Col>
+                </Row>
+              </Checkbox.Group>
+              <hr />
+            </div>
+            <div className="p-5">
+              <h4 className="text-dark font-semibold ">Category</h4>
+              <Checkbox.Group
+                style={{
+                  width: "100%",
+                }}
+                onChange={onChange}
+              >
+                <Row>
+                  <Col span={8} className="py-2">
+                    <Checkbox value="A">SmartPhone</Checkbox>
+                    <Checkbox value="B">Laptops</Checkbox>
+                    <Checkbox value="C">Fragrances</Checkbox>
+                    <Checkbox value="D">SkinCare</Checkbox>
+                    <Checkbox value="E">Groceries</Checkbox>
+                    <Checkbox value="E">Homedecor</Checkbox>
+                  </Col>
+                </Row>
+              </Checkbox.Group>
+              <hr />
+            </div>
           </Sider>
           <Layout>
             <Content width={926} style={{ background: colorBgLayout }}>

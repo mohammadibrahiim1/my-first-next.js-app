@@ -6,6 +6,9 @@ const postDetails = ({ post }) => {
   const handleBack = () => {
     router.push("/Posts");
   };
+
+ 
+
   return (
     <div>
       <div className="card  bg-neutral shadow-xl">
@@ -20,7 +23,7 @@ const postDetails = ({ post }) => {
               back to posts
             </button>
           </div>
-          <p className="text-white" >{post.body}</p>
+          <p className="text-white">{post.body}</p>
         </div>
       </div>
     </div>
@@ -28,10 +31,11 @@ const postDetails = ({ post }) => {
 };
 
 export const getStaticProps = async (context) => {
+  console.log(context.req);
   const { params } = context;
   const res = await fetch(`https://dummyjson.com/posts/${params?.postId}`);
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   return {
     props: {
       post: data,
@@ -57,4 +61,8 @@ export const getStaticPaths = async () => {
   };
 };
 
+
+
 export default postDetails;
+
+

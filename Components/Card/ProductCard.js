@@ -10,7 +10,7 @@ const { Meta } = Card;
 
 const ProductCard = ({ product }) => {
   console.log(product);
-  const { thumbnail, brand, category, title, price, stock, description } =
+  const { thumbnail, brand, category, title, price, stock, description, id } =
     product;
   return (
     <div>
@@ -33,17 +33,16 @@ const ProductCard = ({ product }) => {
         actions={[
           <Meta description={brand.slice(0, 10)} key="setting" />,
 
-          <Meta description={category.slice(0,10)} key="edit" />,
-          // <EllipsisOutlined key="ellipsis" />,
+          <Meta description={category.slice(0, 10)} key="edit" />,
+
           <HeartOutlined key="ellipsis" />,
         ]}
       >
         <div className="flex justify-between items-center ">
           <Meta
             avatar={<Avatar src={thumbnail} />}
-            title={title.slice(0, 23)}
-            description={price} 
-            
+            title={<a href={`/shop/${id}`}> {title.slice(0, 23)}</a>}
+            description={price}
           />
           <Meta
             className="pt-8"
