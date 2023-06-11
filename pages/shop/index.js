@@ -21,7 +21,7 @@ const Shop = ({ products }) => {
   console.log(products);
 
   const {
-    token: { colorBgContainer,colorBgLayout },
+    token: { colorBgContainer, colorBgLayout },
   } = theme.useToken();
   return (
     <div>
@@ -54,26 +54,55 @@ const Shop = ({ products }) => {
           >
             <div className="demo-logo-vertical" />
             <Menu
-            //   theme="dark"
-            //   mode="inline"
-            //   defaultSelectedKeys={["4"]}
-            //   items={[
-            //     UserOutlined,
-            //     VideoCameraOutlined,
-            //     UploadOutlined,
-            //     UserOutlined,
-            //   ].map((icon, index) => ({
-            //     key: String(index + 1),
-            //     icon: React.createElement(icon),
-            //     label: `nav ${index + 1}`,
-            //   }))}
+              style={{ background: colorBgLayout }}
+              //   theme="dark"
+              mode="inline"
+              //   defaultSelectedKeys={["4"]}
+              items={
+                [
+                  {
+                    // key: "1",
+                    // icon: <UserOutlined />,
+                    label: "smartphones",
+                  },
+                  {
+                    // key: "2",
+                    // icon: <VideoCameraOutlined />,
+                    label: "home-decoration",
+                  },
+                  {
+                    // key: "3",
+                    // icon: <UploadOutlined />,
+                    label: "groceries",
+                  },
+                ].map((item) => ({
+                    // key: String(index + 1),
+                    // icon: React.createElement(icon),
+                  
+                }))
+                //  items={
+                //     [
+                // {
+                //     key: '1',
+                //     icon: <UserOutlined />,
+                //     label: 'nav 1',
+                //   },
+                //   {
+                //     key: '2',
+                //     icon: <VideoCameraOutlined />,
+                //     label: 'nav 2',
+                //   },
+                //   {
+                //     key: '3',
+                //     icon: <UploadOutlined />,
+                //     label: 'nav 3',
+                //   },
+                // ]
+              }
             />
           </Sider>
           <Layout>
-            <Content
-              width={926}
-              style={{  background: colorBgLayout }}
-            >
+            <Content width={926} style={{ background: colorBgLayout }}>
               <div
                 className="grid grid-cols-4 gap-5"
                 style={
