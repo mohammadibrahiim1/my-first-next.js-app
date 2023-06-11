@@ -1,3 +1,5 @@
+import { Button, Space } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -84,42 +86,14 @@ const ProductDetails = ({ product }) => {
                       </a>
                     </div>
                   ))}
-                  {/* <div class="w-1/2 p-2 sm:w-1/4">
-                    <a
-                      class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300"
-                      href="#"
-                    >
-                      <img
-                        class="object-contain w-full lg:h-28"
-                        src="https://i.postimg.cc/8kJBrw03/download-removebg-preview.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div class="w-1/2 p-2 sm:w-1/4">
-                    <a
-                      class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300"
-                      href="#"
-                    >
-                      <img
-                        class="object-contain w-full lg:h-28"
-                        src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div class="w-1/2 p-2 sm:w-1/4">
-                    <a
-                      class="block border border-gray-200 hover:border-blue-400 dark:border-gray-700 dark:hover:border-blue-300"
-                      href="#"
-                    >
-                      <img
-                        class="object-contain w-full lg:h-28"
-                        src="https://i.postimg.cc/0N4Kk1PN/black-microprocessors-removebg-preview.png"
-                        alt=""
-                      />
-                    </a>
-                  </div> */}
+                </div>
+                <div className="mt-5">
+                  <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+                    Description
+                  </p>
+                  <h2 class="text-base font-semibold text-gray-700 dark:text-gray-400">
+                    {description}
+                  </h2>
                 </div>
               </div>
             </div>
@@ -252,10 +226,10 @@ const ProductDetails = ({ product }) => {
                               </span>
                               <div>
                                 <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                  No. of cores
+                                  Category
                                 </p>
-                                <h2 class="text-base font-semibold text-gray-700 dark:text-gray-400">
-                                  12 Cores
+                                <h2 class="text-sm font-semibold text-gray-700 dark:text-gray-400">
+                                  {category}
                                 </h2>
                               </div>
                             </div>
@@ -278,10 +252,10 @@ const ProductDetails = ({ product }) => {
                               </span>
                               <div>
                                 <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                  Graphic
+                                  Brand
                                 </p>
-                                <h2 class="text-base font-semibold text-gray-700 dark:text-gray-400">
-                                  Intel UHD
+                                <h2 class="text-sm font-semibold text-gray-700 dark:text-gray-400">
+                                  {brand}
                                 </h2>
                               </div>
                             </div>
@@ -302,10 +276,10 @@ const ProductDetails = ({ product }) => {
                               </span>
                               <div>
                                 <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                  Processor
+                                  In Stock
                                 </p>
                                 <h2 class="text-base font-semibold text-gray-700 dark:text-gray-400">
-                                  INTEL 80486
+                                  {stock}
                                 </h2>
                               </div>
                             </div>
@@ -342,9 +316,7 @@ const ProductDetails = ({ product }) => {
                   </div>
                 </div>
                 <div class="py-6 mb-6 border-t border-b border-gray-200 dark:border-gray-700">
-                  <span class="text-base text-gray-600 dark:text-gray-400">
-                    In Stock : {stock}
-                  </span>
+                  {/* <span class="text-base text-gray-600 dark:text-gray-400"></span> */}
                   <p class="mt-2 text-sm text-blue-500 dark:text-blue-200">
                     Ships from china.
                     <span class="text-gray-600 dark:text-gray-400">
@@ -356,7 +328,7 @@ const ProductDetails = ({ product }) => {
                 <div class="flex flex-wrap items-center mb-6">
                   <div class="mb-4 mr-4 lg:mb-0">
                     <div class="w-28">
-                      <div class="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
+                      <div class="relative flex flex-row w-full h-9 bg-transparent rounded-lg">
                         <button class="w-20 h-full text-gray-600 bg-gray-100 border-r rounded-l outline-none cursor-pointer dark:border-gray-700 dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">
                           <span class="m-auto text-2xl font-thin">-</span>
                         </button>
@@ -371,8 +343,8 @@ const ProductDetails = ({ product }) => {
                       </div>
                     </div>
                   </div>
-                  <div class="mb-4 lg:mb-0">
-                    <button class="flex items-center justify-center w-full h-10 p-2 mr-4 text-gray-700 border border-gray-300 lg:w-11 hover:text-gray-50 dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:border-blue-500 dark:hover:text-gray-100">
+                  <div wrap class="mb-4 lg:mb-0">
+                    <button class="flex items-center justify-center w-full h-9 p-2 mr-4 text-gray-700 border border-gray-300 lg:w-11 hover:text-gray-50 dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:border-blue-500 dark:hover:text-gray-100">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -385,20 +357,23 @@ const ProductDetails = ({ product }) => {
                       </svg>
                     </button>
                   </div>
-                  <a
-                    href="#"
-                    class="w-full px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-1/2 rounded-xl"
-                  >
-                    Add to cart
-                  </a>
+                  <Link href="">
+                    <Space wrap>
+                      <Button>Add To Card</Button>
+                    </Space>
+                  </Link>
                 </div>
                 <div class="flex gap-4 mb-6">
-                  <a
-                    href="#"
-                    class="w-full px-4 py-3 text-center text-gray-100 bg-blue-600 border border-transparent dark:border-gray-700 hover:border-blue-500 hover:text-blue-700 hover:bg-blue-100 dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 rounded-xl"
-                  >
-                    Buy now
-                  </a>
+                  <Link href="/shop" class="w-full  py-3 ">
+                    <Space direction="vertical" style={{ width: "100%" }}>
+                      <Button block>Return To Shop</Button>
+                    </Space>
+                  </Link>
+                  <Link href="#" class="w-full  py-3 ">
+                    <Space direction="vertical" style={{ width: "100%" }}>
+                      <Button block>Buy Now</Button>
+                    </Space>
+                  </Link>
                 </div>
               </div>
             </div>
