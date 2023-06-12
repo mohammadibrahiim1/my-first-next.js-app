@@ -2,9 +2,10 @@ import { Button, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 const ProductDetails = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const {
     price,
     discountPercentage,
@@ -17,6 +18,7 @@ const ProductDetails = ({ product }) => {
     rating,
     stock,
   } = product;
+  const dispatch = useDispatch;
   const router = useRouter();
   const handleBack = () => {
     router.push("/shop");
@@ -205,7 +207,7 @@ const ProductDetails = ({ product }) => {
                           <div class="w-full mb-4 md:w-2/5">
                             <div class="flex ">
                               <span class="mr-3 text-gray-500 dark:text-gray-400">
-                                <svg
+                                {/* <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="16"
                                   height="16"
@@ -217,6 +219,28 @@ const ProductDetails = ({ product }) => {
                                     fill-rule="evenodd"
                                     d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"
                                   ></path>
+                                </svg> */}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  class="icon icon-tabler icon-tabler-category-2"
+                                  width="30"
+                                  height="30"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="#2c3e50"
+                                  fill="none"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                >
+                                  <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                  />
+                                  <path d="M14 4h6v6h-6z" />
+                                  <path d="M4 14h6v6h-6z" />
+                                  <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                                  <path d="M7 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                                 </svg>
                               </span>
                               <div>
@@ -232,7 +256,7 @@ const ProductDetails = ({ product }) => {
                           <div class="w-full mb-4 md:w-2/5">
                             <div class="flex ">
                               <span class="mr-3 text-gray-500 dark:text-gray-400">
-                                <svg
+                                {/* <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="16"
                                   height="16"
@@ -243,6 +267,29 @@ const ProductDetails = ({ product }) => {
                                   <path d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"></path>
                                   <path d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"></path>
                                   <path d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"></path>
+                                </svg> */}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  class="icon icon-tabler icon-tabler-brand-4chan"
+                                  width="30"
+                                  height="30"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="#2c3e50"
+                                  fill="none"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                >
+                                  <path
+                                    stroke="none"
+                                    d="M0 0h24v24H0z"
+                                    fill="none"
+                                  />
+                                  <path d="M14 11s6.054 -1.05 6 -4.5c-.038 -2.324 -2.485 -3.19 -3.016 -1.5c0 0 -.502 -2 -2.01 -2c-1.508 0 -2.984 3 -.974 8z" />
+                                  <path d="M13.98 11s6.075 -1.05 6.02 -4.5c-.038 -2.324 -2.493 -3.19 -3.025 -1.5c0 0 -.505 -2 -2.017 -2c-1.513 0 -3 3 -.977 8z" />
+                                  <path d="M13 13.98l.062 .309l.081 .35l.075 .29l.092 .328l.11 .358l.061 .188l.139 .392c.64 1.73 1.841 3.837 3.88 3.805c2.324 -.038 3.19 -2.493 1.5 -3.025l.148 -.045l.165 -.058a4.13 4.13 0 0 0 .098 -.039l.222 -.098c.586 -.28 1.367 -.832 1.367 -1.777c0 -1.513 -3 -3 -8 -.977z" />
+                                  <path d="M10.02 13l-.309 .062l-.35 .081l-.29 .075l-.328 .092l-.358 .11l-.188 .061l-.392 .139c-1.73 .64 -3.837 1.84 -3.805 3.88c.038 2.324 2.493 3.19 3.025 1.5l.045 .148l.058 .165l.039 .098l.098 .222c.28 .586 .832 1.367 1.777 1.367c1.513 0 3 -3 .977 -8z" />
+                                  <path d="M11 10.02l-.062 -.309l-.081 -.35l-.075 -.29l-.092 -.328l-.11 -.358l-.128 -.382l-.148 -.399c-.658 -1.687 -1.844 -3.634 -3.804 -3.604c-2.324 .038 -3.19 2.493 -1.5 3.025l-.148 .045l-.164 .058a4.13 4.13 0 0 0 -.1 .039l-.22 .098c-.588 .28 -1.368 .832 -1.368 1.777c0 1.513 3 3 8 .977z" />
                                 </svg>
                               </span>
                               <div>
@@ -282,7 +329,7 @@ const ProductDetails = ({ product }) => {
                           <div class="w-full mb-4 lg:mb-0 md:w-2/5">
                             <div class="flex ">
                               <span class="mr-3 text-gray-500 dark:text-gray-400">
-                                <svg
+                                {/* <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   width="16"
                                   height="16"
@@ -293,7 +340,7 @@ const ProductDetails = ({ product }) => {
                                   <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"></path>
                                   <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"></path>
                                   <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"></path>
-                                </svg>
+                                </svg> */}
                               </span>
                               <div>
                                 <p class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -352,18 +399,18 @@ const ProductDetails = ({ product }) => {
                       </svg>
                     </button>
                   </div>
-                  <Link href="">
+                  <div onClick={() => dispatch(addToCart(product))}>
                     <Space wrap>
                       <Button>Add To Cart</Button>
                     </Space>
-                  </Link>
+                  </div>
                 </div>
                 <div class="flex gap-4 mb-6">
-                  <Link href="/shop" class="w-full  py-3 ">
+                  <div onClick={handleBack} class="w-full  py-3 ">
                     <Space direction="vertical" style={{ width: "100%" }}>
                       <Button block>Return To Shop</Button>
                     </Space>
-                  </Link>
+                  </div>
                   <Link href="#" class="w-full  py-3 ">
                     <Space direction="vertical" style={{ width: "100%" }}>
                       <Button block>Buy Now</Button>
