@@ -1,3 +1,4 @@
+import { add } from "@/redux/cartSlice";
 import { Button, Space } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -5,7 +6,19 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 const ProductDetails = ({ product }) => {
-  // console.log(product);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const handleBack = () => {
+    router.push("/shop");
+  };
+  console.log(product);
+
+  const addToCart = () => {
+    // const cartProduct =
+    const data = dispatch(add(product));
+    console.log(data);
+  };
+
   const {
     price,
     discountPercentage,
@@ -18,11 +31,7 @@ const ProductDetails = ({ product }) => {
     rating,
     stock,
   } = product;
-  const dispatch = useDispatch;
-  const router = useRouter();
-  const handleBack = () => {
-    router.push("/shop");
-  };
+
   return (
     <div>
       <section class="py-10 font-poppins dark:bg-gray-800">
@@ -399,11 +408,12 @@ const ProductDetails = ({ product }) => {
                       </svg>
                     </button>
                   </div>
-                  <div onClick={() => dispatch(addToCart(product))}>
-                    <Space wrap>
-                      <Button>Add To Cart</Button>
-                    </Space>
-                  </div>
+                  {/* <div onClick={() => dispatch(addToCart(product))}> */}
+                  {/* <Space wrap> */}
+                  <Button onClick={addToCart}>Add To Cart</Button>
+
+                  {/* </Space> */}
+                  {/* </div> */}
                 </div>
                 <div class="flex gap-4 mb-6">
                   <div onClick={handleBack} class="w-full  py-3 ">
